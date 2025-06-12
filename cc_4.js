@@ -84,3 +84,10 @@ let inspectedProduct = products[0];
 for (let key in inspectedProduct) {
   console.log(`${key}: ${inspectedProduct[key]}`);
 }
+// Step 7: Log all products using Object.entries() + destructuring
+console.log("\n--- Final Inventory and Prices ---");
+for (let product of products) {
+  console.log(`\nProduct: ${product.name}`);
+  for (let [key, value] of Object.entries(product)) {
+    console.log(`${key}: ${value}`);
+  }
