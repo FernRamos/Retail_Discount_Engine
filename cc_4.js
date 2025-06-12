@@ -69,3 +69,12 @@ for (let customerNum = 1; customerNum <= 3; customerNum++) {
     item.inventory -= 1;
     console.log(`${item.name} - $${item.price.toFixed(2)} (Inventory left: ${item.inventory})`);
   }
+   // Apply customer-type discount (from Step 4)
+  let discountRate = getCustomerDiscountRate(customerType);
+  let finalTotal = subtotal * (1 - discountRate);
+  finalTotal = parseFloat(finalTotal.toFixed(2));
+
+  console.log(`Customer Type: ${customerType}`);
+  console.log(`Subtotal: $${subtotal.toFixed(2)}`);
+  console.log(`Final Total after ${discountRate * 100}% discount: $${finalTotal}`);
+}
