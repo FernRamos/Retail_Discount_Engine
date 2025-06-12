@@ -9,3 +9,26 @@ let products = [
 
 console.log("Initial Product List:");
 console.log(products);
+
+// Step 3: Apply category-based discounts using switch
+for (let product of products) {
+  let originalPrice = product.price;
+
+  switch (product.category) {
+    case "electronics":
+      product.price *= 0.8;
+      break;
+    case "apparel":
+      product.price *= 0.85;
+      break;
+    case "groceries":
+    case "household":
+      product.price *= 0.9;
+      break;
+    default:
+      // No discount
+      break;
+  }
+  product.price = parseFloat(product.price.toFixed(2));
+  console.log(`${product.name} (${product.category}): Original $${originalPrice}, Discounted $${product.price}`);
+}
