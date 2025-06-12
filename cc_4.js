@@ -78,3 +78,9 @@ for (let customerNum = 1; customerNum <= 3; customerNum++) {
   console.log(`Subtotal: $${subtotal.toFixed(2)}`);
   console.log(`Final Total after ${discountRate * 100}% discount: $${finalTotal}`);
 }
+// Step 6: Log key/value pairs for first product using for...in
+console.log("\n--- Inspecting First Product ---");
+let inspectedProduct = products[0];
+for (let key in inspectedProduct) {
+  console.log(`${key}: ${inspectedProduct[key]}`);
+}
