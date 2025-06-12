@@ -32,3 +32,14 @@ for (let product of products) {
   product.price = parseFloat(product.price.toFixed(2));
   console.log(`${product.name} (${product.category}): Original $${originalPrice}, Discounted $${product.price}`);
 }
+
+// --- Step 4: Define customer type and discount function ---
+function getCustomerDiscountRate(customerType) {
+  if (customerType === "student") {
+    return 0.05;
+  } else if (customerType === "senior") {
+    return 0.07;
+  } else {
+    return 0;
+  }
+}
