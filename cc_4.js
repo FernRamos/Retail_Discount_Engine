@@ -91,3 +91,4 @@ for (let product of products) {
   for (let [key, value] of Object.entries(product)) {
     console.log(`${key}: ${value}`);
   }
+}
