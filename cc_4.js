@@ -43,3 +43,29 @@ function getCustomerDiscountRate(customerType) {
     return 0;
   }
 }
+// --- Step 5: Simulate checkout for 3 customers ---
+for (let customerNum = 1; customerNum <= 3; customerNum++) {
+  console.log(`\n--- Customer ${customerNum} Checkout ---`);
+
+  // Generate a cart with 2 random products
+  let cart = [];
+  for (let i = 0; i < 2; i++) {
+    let randomIndex = Math.floor(Math.random() * products.length);
+    let selectedProduct = products[randomIndex];
+
+    if (selectedProduct.inventory > 0) {
+      cart.push(selectedProduct);
+    }
+  }
+
+  // Random customer type
+  let customerTypes = ["regular", "student", "senior"];
+  let customerType = customerTypes[Math.floor(Math.random() * customerTypes.length)];
+
+  // Calculate subtotal
+  let subtotal = 0;
+  for (let item of cart) {
+    subtotal += item.price;
+    item.inventory -= 1;
+    console.log(`${item.name} - $${item.price.toFixed(2)} (Inventory left: ${item.inventory})`);
+  }
